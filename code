@@ -1,0 +1,22 @@
+-- create or replace TABLE THIS_DB.PUBLIC.weather_data (
+-- 	day VARCHAR(16777216),
+-- 	temp NUMBER(38,0),
+-- 	condition VARCHAR(16777216)
+-- );
+
+-- use schema this_db.PUBLIC;
+-- create or replace function add_pi(PARAM_1 FLOAT)
+--     returns float
+--     language SQL
+--     as $$
+--         PARAM_1 + 3.1415926::FLOAT
+--     $$;
+
+-- create or replace function add_pi(PARAM_1 VARCHAR)
+--     returns VARCHAR
+--     language SQL
+--     as $$
+--         PARAM_1 || '+ 3.1415926'
+--     $$;
+
+-- select add_pi(1), add_pi('1.0');
