@@ -1,0 +1,28 @@
+// Total Confirmed Cases by County
+/*
+Aggregate the confirmed covid-19 cases by county
+*/
+SELECT area county, SUM(cases) sum_of_cases
+FROM covid.cases 
+GROUP BY county;
+
+// County Raw Hospital Capacity
+/*
+Show the counties with the most raw capacity over time
+
+*/
+SELECT county,todays_date, SUM(all_hospital_beds)sum_county_beds 
+FROM covid.hospitals_by_county
+WHERE all_hospital_beds IS NOT NULL
+AND todays_date IS NOT NULL
+GROUP BY county, todays_date;
+
+// Fulfilled PPE Requests
+/*
+Quantity of orders filled across the state for Personal Protection Equipment(PPE)
+
+*/
+SELECT county, product_family, sum(quantity_filled) 
+FROM covid.logistics_ppe 
+GROUP BY county, product_family;
+
